@@ -476,4 +476,8 @@ footer .social-icons .text-white {
   border-radius: 3px;
 }
 
+.form-floating>.form-control{
+  background-color: var(--color-ededed);
+}
+
 /* Store Section Ends */
