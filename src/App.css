@@ -556,8 +556,10 @@ footer .social-icons .text-white {
   list-style: none;
 }
 
-.contact-inner-wrapper .ps-0 a{
-  text-decoration: none;
+.contact-inner-wrapper address,
+.contact-inner-wrapper a,
+.contact-inner-wrapper p{
+  color: var(--color-777777);
 }
 
 /* Contact Page Ends*/
