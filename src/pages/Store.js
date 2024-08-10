@@ -6,7 +6,6 @@ import ProductCard from '../components/ProductCard';
 
 const Store = () => {
   const [grid, setGrid] = useState(4);
-  // alert(grid)
 
   return (
     <>
@@ -146,7 +145,7 @@ const Store = () => {
               <div className="filter-sort-grid mb-3 ">
                 <div className="d-flex justify-content-between align-items-center">
                   <div className="d-flex align-items-center gap-10">
-                    <p className="mb-0 d-block" style={{"width": "100px"}}>Sort By:</p>
+                    <p className="mb-0 d-block" style={{ "width": "100px" }}>Sort By:</p>
                     <select name="" className='form-control form-select' id="">
                       <option value="manual">Featured</option>
                       <option value="best-selling" selected='selected'>Best Selling</option>
@@ -161,17 +160,17 @@ const Store = () => {
                   <div className='d-flex align-items-center gap-10 grid'>
                     <p className="total-products mb-0">21 products</p>
                     <div className="d-flex gap-10 align-items-center">
-                      <img onClick={()=> {
-                        setGrid(4)
-                      }} src="images/gr4.svg" alt="grid" className="d-block img-fluid" />
-                      <img onClick={()=> {
+                      <img onClick={() => {
                         setGrid(3)
+                      }} src="images/gr4.svg" alt="grid" className="d-block img-fluid" />
+                      <img onClick={() => {
+                        setGrid(4)
                       }} src="images/gr3.svg" alt="grid" className="d-block img-fluid" />
-                      <img onClick={()=> {
-                        setGrid(2)
+                      <img onClick={() => {
+                        setGrid(6)
                       }} src="images/gr2.svg" alt="grid" className="d-block img-fluid" />
-                      <img onClick={()=> {
-                        setGrid(1)
+                      <img onClick={() => {
+                        setGrid(12)
                       }} src="images/gr.svg" alt="grid" className="d-block img-fluid" />
                     </div>
                   </div>
@@ -179,7 +178,11 @@ const Store = () => {
               </div>
               {/* Store Products List */}
               <div className="products-list pb-5">
-                <ProductCard grid={grid}/>
+                <div className="d-flex gap-10 flex-wrap">
+                  <ProductCard grid={grid} />
+                  <ProductCard grid={grid} />
+                  <ProductCard grid={grid} />
+                </div>
               </div>
             </div>
           </div>
