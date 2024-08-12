@@ -51,7 +51,7 @@ a {
   background-color: var(--color-232f3e);
   color: white;
   font-size: 14px;
-  padding: 13px 13px;
+  padding: 13px 30px;
   border-radius: 25px;
 }
 
@@ -310,6 +310,25 @@ footer .social-icons .text-white {
   font-weight: 500;
   margin-bottom: 30px;
 }
+
+.single-blog-card h3{
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-1c1c1b);
+
+}
+
+.single-blog-card p{
+  color: var(--color-777777);
+  font-size: 14px;
+}
+
+.single-blog-card a{
+  color: var(--color-777777);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
 /* BlogCard section ends */
 
 /* productCard section */
@@ -561,7 +580,9 @@ footer .social-icons .text-white {
 .contact-inner-wrapper p{
   color: var(--color-777777);
 }
+/* Contact Page Ends*/
 
+/* WISHLIST PAGE */
 .wishlist-card .cross {
   top: 15px;
   right: 15px;
@@ -582,5 +603,52 @@ footer .social-icons .text-white {
   line-height: 22px;
   font-weight: 400;
 }
+/* WISHLIST PAGE ENDS */
 
-/* Contact Page Ends*/
+/* Login-auth-card page */
+.auth-card {
+  padding: 20px;
+  background-color: white;
+  width: 500px;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+.auth-card h3 {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-777777);
+}
+
+.auth-card .form-control {
+  background-color: var(--color-f5f5f7);
+  color: var(--color-777777);
+  font-size: 15px;
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 12px;
+}
+
+.auth-card  a{
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-1c1c1b);
+}
+
+.auth-card .signup {
+  background-color: var(--color-febd69);
+  color: var(--color-131921);
+}
+
+.auth-card .signup:hover {
+  background-color: var(--color-131921);
+  color: white;
+}
+
+.auth-card p{
+  font-size: 13px;
+  color: var(--color-777777);
+}
+
+
+/* Login-auth-card page ends */

@@ -14,7 +14,7 @@ const BlogCard = () => {
         <p className='desc'>
           El azar es una casualidad, presente, teóricamente, en diversos fenómenos
         </p>
-        <Link to="/" className='button'>Read More</Link>
+        <Link to="/specific-blog" className='button'>Read More</Link>
       </div>
     </div>
   )

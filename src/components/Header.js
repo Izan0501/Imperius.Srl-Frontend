@@ -41,12 +41,12 @@ const Header = () => {
               </div>
             </div>
             <div className="col-5">
-              <div className="header-upper-links d-flex align-items-center justify-content-between">
+              <div className="header-upper-links d-flex align-items-center justify-content-around">
                 <div className="">
-                  <Link className='d-flex align-items-center gap-10 text-white'>
-                    <img src="images/compare.svg" alt="compare" />
+                  <Link to='/store' className='d-flex align-items-center gap-10 text-white'>
+                    <img src="images/store-svgrepo-com.svg" alt="compare" />
                     <p className='mb-0'>
-                      Compare <br /> Products
+                      Store <br />
                     </p>
                   </Link>
                 </div>
@@ -59,7 +59,7 @@ const Header = () => {
                   </Link>
                 </div>
                 <div className="">
-                  <Link className='d-flex align-items-center gap-10 text-white'>
+                  <Link to='/login' className='d-flex align-items-center gap-10 text-white'>
                     <img src="images/user.svg" alt="cart" />
                     <p className='mb-0'>
                       Log in <br /> My account
@@ -106,10 +106,6 @@ const Header = () => {
                     <NavLink
                       to='/'>
                       Home
-                    </NavLink>
-                    <NavLink
-                      to='/store'>
-                      Our Store
                     </NavLink>
                     <NavLink
                       to='/blog'>

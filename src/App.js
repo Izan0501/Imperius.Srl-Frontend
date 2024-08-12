@@ -8,6 +8,11 @@ import About from "./pages/About"
 import Store from "./pages/Store"
 import Blog from './pages/Blog';
 import Wishlist from './pages/Wishlist';
+import Login from './pages/Login';
+import ForgotPassword from "./pages/ForgotPassword"
+import Signup from './pages/Signup';
+import ResetPassword from './pages/ResetPassword';
+import SpecificBlog from './pages/SpecificBlog';
 
 function App() {
   return (
@@ -21,6 +26,11 @@ function App() {
             <Route path='store' element={<Store />} />
             <Route path='blog' element={<Blog />} />
             <Route path='wishlist' element={<Wishlist />} />
+            <Route path='login' element={<Login />} />
+            <Route path='forgot-password' element={<ForgotPassword />} />
+            <Route path='signup' element={<Signup />} />
+            <Route path='reset-password' element={<ResetPassword />} />
+            <Route path='specific-blog' element={<SpecificBlog />} />
           </Route>
         </Routes>
       </BrowserRouter>
