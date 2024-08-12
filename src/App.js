@@ -7,6 +7,7 @@ import Contact from "./pages/Contact"
 import About from "./pages/About"
 import Store from "./pages/Store"
 import Blog from './pages/Blog';
+import Wishlist from './pages/Wishlist';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='contact' element={<Contact />} />
             <Route path='store' element={<Store />} />
             <Route path='blog' element={<Blog />} />
+            <Route path='wishlist' element={<Wishlist />} />
           </Route>
         </Routes>
       </BrowserRouter>
