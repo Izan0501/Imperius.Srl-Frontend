@@ -183,7 +183,6 @@ const Store = () => {
                   <ProductCard grid={grid} />
                   <ProductCard grid={grid} />
                   <ProductCard grid={grid} />
-                  <ProductCard grid={grid} />
                 </div>
               </div>
             </div>

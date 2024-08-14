@@ -1,7 +1,6 @@
 import React from 'react';
 import Meta from '../components/Meta';
 import ResetPasswordHeader from '../components/StoreHeader';
-import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
     return (

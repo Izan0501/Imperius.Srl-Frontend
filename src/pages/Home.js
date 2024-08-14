@@ -174,10 +174,12 @@ const Home = () => {
                                 Featured Collection
                             </h3>
                         </div>
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        <div className="row">
+                            <ProductCard />
+                            <ProductCard />
+                            <ProductCard />
+                            <ProductCard />
+                        </div>
                     </div>
                 </div>
             </section>

@@ -13,6 +13,7 @@ import ForgotPassword from "./pages/ForgotPassword"
 import Signup from './pages/Signup';
 import ResetPassword from './pages/ResetPassword';
 import SpecificBlog from './pages/SpecificBlog';
+import SpecificProduct from './pages/SpecificProduct';
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='contact' element={<Contact />} />
-            <Route path='store' element={<Store />} />
+            <Route path='product' element={<Store />} />
             <Route path='blog' element={<Blog />} />
             <Route path='wishlist' element={<Wishlist />} />
             <Route path='login' element={<Login />} />
@@ -31,6 +32,7 @@ function App() {
             <Route path='signup' element={<Signup />} />
             <Route path='reset-password' element={<ResetPassword />} />
             <Route path='specific-blog' element={<SpecificBlog />} />
+            <Route path='product/:id' element={<SpecificProduct />} />
           </Route>
         </Routes>
       </BrowserRouter>

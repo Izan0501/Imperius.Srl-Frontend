@@ -43,7 +43,7 @@ const Header = () => {
             <div className="col-5">
               <div className="header-upper-links d-flex align-items-center justify-content-around">
                 <div className="">
-                  <Link to='/store' className='d-flex align-items-center gap-10 text-white'>
+                  <Link to='/product' className='d-flex align-items-center gap-10 text-white'>
                     <img src="images/store-svgrepo-com.svg" alt="compare" />
                     <p className='mb-0'>
                       Store <br />

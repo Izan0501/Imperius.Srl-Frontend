@@ -1,7 +1,6 @@
 import React from 'react'
 import Meta from '../components/Meta'
 import BlogHeader from '../components/StoreHeader'
-import BlogCard from '../components/BlogCard'
 import { Link } from 'react-router-dom'
 import { HiOutlineArrowLeft } from 'react-icons/hi'
 
