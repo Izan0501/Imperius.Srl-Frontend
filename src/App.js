@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import ResetPassword from './pages/ResetPassword';
 import SpecificBlog from './pages/SpecificBlog';
 import SpecificProduct from './pages/SpecificProduct';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path='reset-password' element={<ResetPassword />} />
             <Route path='specific-blog' element={<SpecificBlog />} />
             <Route path='product/:id' element={<SpecificProduct />} />
+            <Route path='cart' element={<Cart/>} />
           </Route>
         </Routes>
       </BrowserRouter>

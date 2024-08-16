@@ -10,6 +10,16 @@ import { TbGitCompare } from 'react-icons/tb';
 const SpecificProduct = () => {
     const props = { width: 400, heigth: 500, zoomWidth: 600, img: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg" };
 
+    const copyToClipboard = (text) => {
+        console.log('text', text)
+        var textField = document.createElement('textarea')
+        textField.innerText = text
+        document.body.appendChild(textField)
+        textField.select()
+        document.execCommand('copy')
+        textField.remove()
+    }
+
     return (
         <>
             <Meta title={'Product Name'} />
@@ -49,7 +59,7 @@ const SpecificProduct = () => {
                                         />
                                     </div>
                                 </div>
-                                <div className="border-bottom py-3">
+                                <div className="py-3">
                                     <div className="d-flex gap-10 align-items-center my-2">
                                         <h3 className='product-heading'>Type: </h3>
                                         <p className='product-data'>Watch</p>
@@ -62,15 +72,15 @@ const SpecificProduct = () => {
                                         <h3 className='product-heading'>Category: </h3>
                                         <p className='product-data'>Watch</p>
                                     </div>
-                                    <div className="d-flex gap-10 align-items-center my-2">
+                                    <div className="d-flex gap-10 align-items-center my-2 mb-3">
                                         <h3 className='product-heading'>Tags: </h3>
                                         <p className='product-data'>Watch</p>
                                     </div>
-                                    <div className="d-flex gap-10 align-items-center my-2">
+                                    <div className="d-flex gap-10 align-items-center my-2 mb-3">
                                         <h3 className='product-heading'>Availablity : </h3>
                                         <p className='product-data'>In Stock</p>
                                     </div>
-                                    <div className="d-flex flex-row align-items-center gap-15 mt-2">
+                                    <div className="d-flex flex-row align-items-center gap-15 mt-2 mb-3">
                                         <h3 className='product-heading'>Quantity : </h3>
                                         <div>
                                             <input
@@ -92,11 +102,30 @@ const SpecificProduct = () => {
                                     </div>
                                     <div className="d-flex align-items-center gap-15">
                                         <div>
-                                            <a href=""><AiOutlineHeart className='fs-5 '/>Add to Compare</a>
+                                            <a href=""><AiOutlineHeart className='fs-5 me-2' />Add to Compare</a>
                                         </div>
                                         <div>
-                                            <a href=""><TbGitCompare className='fs-5 '/>Add to Wishlist</a>
+                                            <a href=""><TbGitCompare className='fs-5 me-2' />Add to Wishlist</a>
                                         </div>
+                                    </div>
+                                    <div className="d-flex gap-10 my-3">
+                                        <h3 className='product-heading'>Shipping & Returns: </h3>
+                                        <p className='product-data'>Free Order
+                                            Without web taxes!! <br /> {" "}
+                                            Daily Surprise Offers{" "}
+                                            <b>Save upto 25% </b></p>
+                                    </div>
+                                    <div className="d-flex gap-10 align-items-center my-2">
+                                        <h3 className='product-heading'>Copy Product Link: </h3>
+                                        <a href="javascript:void(0);" onClick={()=> {
+                                            copyToClipboard(" https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg")
+                                        }}>
+                                            Product Link
+                                        </a>
+                                        {/* <p className='product-data'>Free Order
+                                            Without web taxes!! <br /> {" "}
+                                            Daily Surprise Offers{" "}
+                                            <b>Save upto 25% </b></p> */}
                                     </div>
                                 </div>
                             </div>
