@@ -3,6 +3,7 @@ import Meta from '../components/Meta';
 import CartHeader from '../components/StoreHeader';
 import watch from "../images/watch.jpg";
 import { AiFillDelete } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     return (
@@ -19,17 +20,15 @@ const Cart = () => {
                                 <h4 className='cart-col-3'>Quantity</h4>
                                 <h4 className='cart-col-4'>Total</h4>
                             </div>
-                        </div>
-                        <div className="col-12">
                             <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center">
                                 <div className="cart-col-1 gap-15 d-flex align-items-center">
                                     <div className="w-25">
                                         <img src={watch} className='img-fluid' alt="watch" />
                                     </div>
                                     <div className="w-100">
-                                        <h5 className='title'>Smart Watch Series 7</h5>
-                                        <p className="color">Free Shipping</p>
-                                        <p className="size">1</p>
+                                        <p>Smart Watch Series 7</p>
+                                        <p>Free Shipping</p>
+                                        <p>1</p>
                                     </div>
                                 </div>
                                 <div className="cart-col-2">
@@ -54,6 +53,8 @@ const Cart = () => {
                                 </div>
                                 <div className="cart-col-4">
                                     <h5 className="price">$ 100</h5>
+                                </div>
+                                <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center">
                                 </div>
                             </div>
                             <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center">
@@ -90,6 +91,20 @@ const Cart = () => {
                                 <div className="cart-col-4">
                                     <h5 className="price">$ 100</h5>
                                 </div>
+                                <div className="cart-data py-3 mb-2 d-flex justify-content-between align-items-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div className="cart-subtotal col-12 py-2 mt-4">
+                            <div className="d-flex justify-content-between align-items-baseline">
+                            <Link to='/product' className='button'>Continue To Shopping</Link>
+                            <div className='d-flex align-items-end flex-column'>
+                                <h4>SubTotal: $200</h4>
+                                <p>Taxes and shiping caculated at checkout</p>
+                                <Link 
+                                to='/checkout'
+                                className='button'>Checkout</Link>
+                            </div>
                             </div>
                         </div>
                     </div>
