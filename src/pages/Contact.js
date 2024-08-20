@@ -3,14 +3,14 @@ import Meta from '../components/Meta';
 import ContactHeader from '../components/StoreHeader';
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai';
 import { BiPhoneCall, BiInfoCircle } from 'react-icons/bi';
+import Container from '../components/Container';
 
 const Contact = () => {
   return (
     <>
       <Meta title={'Contact Us'} />
       <ContactHeader title='Contact Us' />
-      <div className="contact-wrapper home-wrapper-2 py-5">
-        <div className="container-xxl">
+      <Container class1="contact-wrapper home-wrapper-2 py-5">
           <div className="row">
             <div className="col-12">
               <iframe
@@ -91,8 +91,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Container>
     </>
   )
 }
