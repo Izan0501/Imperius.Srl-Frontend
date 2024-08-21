@@ -25,31 +25,31 @@ const Contact = () => {
           </div>
           <div className="col-12 mt-5">
             <div className="contact-inner-wrapper d-flex justify-content-between">
-              <div className="">
+              <div>
                 <h3 className="contact-title mb-4 gap-15">Contact</h3>
                 <form action="" className='d-flex flex-column gap-15'>
-                  <div className="">
+                  <div>
                     <input
                       type="text"
                       className='form-control'
                       placeholder='Name'
                     />
                   </div>
-                  <div className="">
+                  <div>
                     <input
                       type="email"
                       className='form-control'
                       placeholder='Email'
                     />
                   </div>
-                  <div className="">
+                  <div>
                     <input
                       type="tel"
                       className='form-control'
                       placeholder='Mobile Number'
                     />
                   </div>
-                  <div className="">
+                  <div>
                     <textarea
                       name=''
                       id=''
@@ -59,12 +59,12 @@ const Contact = () => {
                       placeholder='Comments'
                     ></textarea>
                   </div>
-                  <div className="">
+                  <div>
                     <button className='button border-0'>Send</button>
                   </div>
                 </form>
               </div>
-              <div className="">
+              <div>
                 <h3 className="contact-title mb-4">Get in touch with us </h3>
                 <div>
                   <ul className="ps-0">

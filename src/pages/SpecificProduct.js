@@ -102,10 +102,10 @@ const SpecificProduct = () => {
                                 </div>
                                 <div className="d-flex align-items-center gap-15">
                                     <div>
-                                        <a href=""><AiOutlineHeart className='fs-5 me-2' />Add to Compare</a>
+                                        <a href="#"><AiOutlineHeart className='fs-5 me-2' />Add to Compare</a>
                                     </div>
                                     <div>
-                                        <a href=""><TbGitCompare className='fs-5 me-2' />Add to Wishlist</a>
+                                        <a href="#"><TbGitCompare className='fs-5 me-2' />Add to Wishlist</a>
                                     </div>
                                 </div>
                                 <div className="d-flex gap-10 my-3">
