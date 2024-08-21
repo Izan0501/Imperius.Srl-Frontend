@@ -117,7 +117,7 @@ const SpecificProduct = () => {
                                 </div>
                                 <div className="d-flex gap-10 align-items-center my-2">
                                     <h3 className='product-heading'>Copy Product Link: </h3>
-                                    <a href="javascript:void(0);" onClick={() => {
+                                    <a href="#" onClick={() => {
                                         copyToClipboard(" https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg")
                                     }}>
                                         Product Link
