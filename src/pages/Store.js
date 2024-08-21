@@ -12,7 +12,7 @@ const Store = () => {
     <>
       <Meta title={"Imperius.Srl"} />
       <StoreHeader title='Our Store' />
-      <Container className="store-wrapper home-wrapper-2 py-5">
+      <Container class1="store-wrapper home-wrapper-2 py-5">
         <div className="row">
           {/* Category Filter */}
           <div className="col-3">
@@ -146,9 +146,9 @@ const Store = () => {
               <div className="d-flex justify-content-between align-items-center">
                 <div className="d-flex align-items-center gap-10">
                   <p className="mb-0 d-block" style={{ "width": "100px" }}>Sort By:</p>
-                  <select name="" className='form-control form-select' id="">
+                  <select defaultValue={'manual'} name="" className='form-control form-select' id="">
                     <option value="manual">Featured</option>
-                    <option value="best-selling" selected='selected'>Best Selling</option>
+                    <option value="best-selling">Best Selling</option>
                     <option value="title ascending">Alphabetically, A-Z</option>
                     <option value="title descending">Alphabetically, Z-A</option>
                     <option value="price-ascending"> Price, low to high</option>

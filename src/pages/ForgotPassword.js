@@ -3,6 +3,7 @@ import Meta from '../components/Meta'
 import ForgotPasswordHeader from '../components/StoreHeader'
 import { Link } from 'react-router-dom'
 import Container from '../components/Container'
+import CustomInput from '../components/CustomInput'
 
 const ForgotPassword = () => {
   return (
@@ -19,9 +20,11 @@ const ForgotPassword = () => {
                 action=""
                 className='d-flex flex-column gap-15'
               >
-                <div>
-                  <input type="email" name='email' placeholder='Email' className="form-control" />
-                </div>
+                <CustomInput 
+                  type="email" 
+                  name='email' 
+                  placeholder='Email' 
+                />
                 <div className="mt-3 d-flex justify-content-center flex-column gap-15 align-items-center">
                   <button className="button border-0">
                     Submit

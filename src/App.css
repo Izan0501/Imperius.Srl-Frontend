@@ -216,7 +216,7 @@ footer .social-icons .text-white {
 /*home wrapper 2*/
 
 .home-wrapper-2 {
-  background-color: var(--color-f5f5f7);
+  background-color: var(--color-f5f5f7) !important;
 }
 /* home wrapper 2 ends */
 
@@ -392,7 +392,9 @@ footer .social-icons .text-white {
 /* productCard section ends */
 
 /* Famous-popular products section */
-
+.store-wrapper {
+  background-color: var(--color-777777);
+}
 .famous-card .famous-content {
   top: 5%;
   left: 10%;
