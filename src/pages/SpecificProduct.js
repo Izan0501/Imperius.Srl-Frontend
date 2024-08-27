@@ -3,10 +3,11 @@ import Meta from '../components/Meta'
 import ProductHeader from '../components/StoreHeader'
 import ProductCard from '../components/ProductCard'
 import ReactImageZoom from 'react-image-zoom';
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import { AiOutlineHeart } from 'react-icons/ai';
 import { TbGitCompare } from 'react-icons/tb';
 import Container from '../components/Container';
+import { Link } from 'react-router-dom';
 
 const SpecificProduct = () => {
     const props = { width: 400, heigth: 500, zoomWidth: 600, img: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg" };
@@ -50,13 +51,13 @@ const SpecificProduct = () => {
                                     $100
                                 </p>
                                 <div className="d-flex align-items-center gap-10">
-                                    <ReactStars
+                                    {/* <ReactStars
                                         count={5}
                                         size={24}
                                         activeColor="#ffd700"
                                         value={4}
                                         edit={false}
-                                    />
+                                    /> */}
                                 </div>
                             </div>
                             <div className="py-3">
@@ -95,17 +96,17 @@ const SpecificProduct = () => {
                                     </div>
                                     <div className='d-flex align-items-center gap-30 ms-5'>
                                         <button className="button border-0" type='submit'>
-                                            Add To Cart
+                                            <Link to='/cart'>Add To Cart</Link>
                                         </button>
                                         <button className='button signup'>Buy It Now</button>
                                     </div>
                                 </div>
                                 <div className="d-flex align-items-center gap-15">
                                     <div>
-                                        <a href="#"><AiOutlineHeart className='fs-5 me-2' />Add to Compare</a>
+                                        <Link to="/"><TbGitCompare className='fs-5 me-2' />Add to Compare</Link>
                                     </div>
                                     <div>
-                                        <a href="#"><TbGitCompare className='fs-5 me-2' />Add to Wishlist</a>
+                                        <Link to="/"><AiOutlineHeart className='fs-5 me-2' />Add to Wishlist</Link>
                                     </div>
                                 </div>
                                 <div className="d-flex gap-10 my-3">
@@ -117,11 +118,11 @@ const SpecificProduct = () => {
                                 </div>
                                 <div className="d-flex gap-10 align-items-center my-2">
                                     <h3 className='product-heading'>Copy Product Link: </h3>
-                                    <a href="#" onClick={() => {
+                                    <Link to="/" onClick={() => {
                                         copyToClipboard(" https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg")
                                     }}>
                                         Product Link
-                                    </a>
+                                    </Link>
                                     {/* <p className='product-data'>Free Order
                                             Without web taxes!! <br /> {" "}
                                             Daily Surprise Offers{" "}
@@ -153,8 +154,8 @@ const SpecificProduct = () => {
                     </div>
                     <div className="row">
                         <ProductCard />
+                        <ProductCard />
                         {/* <ProductCard />
-                            <ProductCard />
                             <ProductCard /> */}
                     </div>
                 </div>

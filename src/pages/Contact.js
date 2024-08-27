@@ -4,6 +4,7 @@ import ContactHeader from '../components/StoreHeader';
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai';
 import { BiPhoneCall, BiInfoCircle } from 'react-icons/bi';
 import Container from '../components/Container';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   return (
@@ -76,11 +77,11 @@ const Contact = () => {
                     </li>
                     <li className='mb-3 d-flex gap-15 align-items-center'>
                       <BiPhoneCall className='fs-5' />
-                      <a href="tel:+54 381683547">+54 381683547</a>
+                      <Link to="/tel:+54 381683547">+54 381683547</Link>
                     </li>
                     <li className='mb-3 d-flex gap-15 align-items-center'>
                       <AiOutlineMail className='fs-5' />
-                      <a href="mailto:imperius.srl@gmail.com">imperius.srl@gmail.com</a>
+                      <Link to="/mailto:imperius.srl@gmail.com">imperius.srl@gmail.com</Link>
                     </li>
                     <li className='mb-3 d-flex gap-15 align-items-center'>
                       <BiInfoCircle className='fs-5' />

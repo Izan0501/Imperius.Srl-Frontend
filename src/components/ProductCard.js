@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactStars from "react-rating-stars-component";
+// import ReactStars from "react-rating-stars-component";
 import { Link, useLocation } from 'react-router-dom';
 import prodcompare from "../images/prodcompare.svg";
 import wish from "../images/wish.svg"
@@ -12,11 +12,11 @@ import view from "../images/view.svg"
 const ProductCard = (props) => {
     const { grid } = props
     const location = useLocation();
-
+    
     return (
         <>
             <div className={`${location.pathname === "/product" ? `gr-${grid}` : "col-3"}`}>
-                <Link to=':id' className="product-card position-relative">
+                <Link to={`${location.pathname === '/' ? '/product/:id' : location.pathname=== '/product/:id' ? 'product/1' : ':id'}`} className="product-card position-relative">
                     <div className="wishlist-icon position-absolute">
                         <Link>
                             <img src={wish} alt="wishlist" />
@@ -31,13 +31,13 @@ const ProductCard = (props) => {
                         <h5 className="product tittle">
                             kids headphones bulk 10 pak lulti colored for students
                         </h5>
-                        <ReactStars
+                        {/* <ReactStars
                             count={5}
                             size={24}
                             activeColor="#ffd700"
                             value={4}
                             edit={false}
-                        />
+                        /> */}
                         <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
                             At veri eos er accusamius eu ijusti odio dihfionsj dicusi qui
                             blandintiis oraesentium volptatum vlpado delentini atque qurripri
@@ -61,7 +61,7 @@ const ProductCard = (props) => {
                 </Link>
             </div>
             <div className={`${location.pathname === "/product" ? `gr-${grid}` : "col-3"}`}>
-                <Link to=':id' className="product-card position-relative">
+            <Link to={`${location.pathname === '/' ? '/product/:id' : location.pathname=== '/product/:id' ? 'product/1' : ':id'}`} className="product-card position-relative">
                     <div className="wishlist-icon position-absolute">
                         <Link>
                             <img src={wishlist} alt="wishlist" />
@@ -76,13 +76,13 @@ const ProductCard = (props) => {
                         <h5 className="product tittle">
                             kids headphones bulk 10 pak lulti colored for students
                         </h5>
-                        <ReactStars
+                        {/* <ReactStars
                             count={5}
                             size={24}
                             activeColor="#ffd700"
                             value={4}
                             edit={false}
-                        />
+                        /> */}
                         <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
                             At veri eos er accusamius eu ijusti odio dihfionsj dicusi qui
                             blandintiis oraesentium volptatum vlpado delentini atque qurripri

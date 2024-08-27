@@ -13,13 +13,15 @@ const Home = () => {
             <Container class1='home-wrapper-1 py-5'>
                 <div className="row">
                     <div className="col-6">
-                        <div className="main-banner position-relative p-3">
-                            <img src="images/main-banner-1.jpg" className='img-fluid rounded-3' alt="main banner" />
+                        <div 
+                        style={{"width":"614px", "height":"440px", "backgroundColor":"white", "borderRadius":"10px"}}
+                        className="main-banner position-relative p-3 object-fit-fill">
+                            <img src="images/arcor2.png" className='img-fluid rounded-3 w-100 h-100 object-fit-cover' alt="main banner" />
                             <div className="main-banner-content position-absolute">
-                                <h4>SUPERCHARGED FOR PRO5.</h4>
-                                <h5>iPad S13+ Pro.</h5>
-                                <p>From $999.00 <br /> or $41.62/mo</p>
-                                <Link className='button'>Buy Now</Link>
+                                <h4>Nuevas Cofler Rellenas</h4>
+                                <h5>Probalas con tus amigos</h5>
+                                <p>Disponibles ya en tienda y sucursales <br /> imperius.Srl</p>
+                                <Link className='button'>Ver</Link>
                             </div>
                         </div>
                     </div>
@@ -240,7 +242,7 @@ const Home = () => {
                 </div>
             </Container>
             {/* blog--wrapper */}
-            <Container className="blog-wrapper py-5 home-wrapper-2">
+            <Container class1="blog-wrapper py-5 home-wrapper-2">
                 <div className="row">
                     <div className="col-12">
                         <h3 className="section-heading">
