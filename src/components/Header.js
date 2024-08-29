@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       {/* Top Header */}
-      <header className="header-top-strip py-3">
+      {/* <header className="header-top-strip py-3">
         <div className="container-xxl">
           <div className="row">
             <div className="col-6">
@@ -19,7 +19,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
       {/* Middle Header */}
       <header className="header-upper py-3">
         <div className="container-xxl">

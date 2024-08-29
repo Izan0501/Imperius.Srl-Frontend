@@ -98,7 +98,9 @@ const SpecificProduct = () => {
                                         <button className="button border-0" type='submit'>
                                             <Link to='/cart'>Add To Cart</Link>
                                         </button>
-                                        <button className='button signup'>Buy It Now</button>
+                                        <button className='button signup'>
+                                            <Link to='/checkout'>Bui it now</Link>
+                                        </button>
                                     </div>
                                 </div>
                                 <div className="d-flex align-items-center gap-15">
