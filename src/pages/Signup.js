@@ -30,7 +30,7 @@ const Signup = () => {
   };
 
 
-  // getting form register data
+  //getting form register data
   const handleSubmit = async (e) => {
     e.preventDefault();
 
