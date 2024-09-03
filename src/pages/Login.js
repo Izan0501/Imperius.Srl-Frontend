@@ -10,12 +10,12 @@ import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
 
-  const { user, setUser } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    email: 'ivotest@gmail.com',
-    password: '123456',
+    email: '',
+    password: '',
   });
 
   /* 
@@ -40,16 +40,12 @@ const Login = () => {
 
     try {
       const { access } = await loginUser(formData);
+      login(access);
+      
+      console.log(access);
+      localStorage.setItem('access', access);
 
-      if (access) {
-        setUser({
-          firstname: 'Tomas',
-          lastname: 'Aranda',
-          email: 'tomas@test.static.com'
-        });
-        
-        navigate('/')
-      }
+      navigate('/');
 
       setError('');
     } catch (error) {

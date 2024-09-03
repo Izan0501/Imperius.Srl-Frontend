@@ -44,10 +44,10 @@ function App() {
           {user ? (
             <>
               <Route path='cart' element={<Cart />} />
+              <Route path='checkout' element={<Checkout />} />
             </>
           ) : null
           }
-          <Route path='checkout' element={<Checkout />} />
         </Route>
       </Routes>
     </>
