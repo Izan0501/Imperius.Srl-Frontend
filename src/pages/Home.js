@@ -128,6 +128,7 @@ const Home = () => {
                     </div>
                 </div>
             </Container>
+            {/* Services section */}
             <Container class1='home-wrapper-2 py-5'>
                 <div className="row">
                     <div className="col-12">
