@@ -1,16 +1,16 @@
 import React from 'react'
 import Meta from '../components/Meta'
 import ProductHeader from '../components/StoreHeader'
-import ProductCard from '../components/ProductCard'
+// import ProductCard from '../components/ProductCard';
 import ReactImageZoom from 'react-image-zoom';
-// import ReactStars from "react-rating-stars-component";
 import { AiOutlineHeart } from 'react-icons/ai';
 import { TbGitCompare } from 'react-icons/tb';
 import Container from '../components/Container';
 import { Link } from 'react-router-dom';
 
 const SpecificProduct = () => {
-    const props = { width: 400, heigth: 500, zoomWidth: 600, img: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg" };
+    const propsZ = { width: 400, heigth: 500, zoomWidth: 600, img: "https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg" };
+
 
     const copyToClipboard = (text) => {
         console.log('text', text)
@@ -31,7 +31,7 @@ const SpecificProduct = () => {
                     <div className="col-6">
                         <div className="main-product-image">
                             <div>
-                                <ReactImageZoom {...props} />
+                                <ReactImageZoom {...propsZ} />
                             </div>
                         </div>
                         <div className="other-product-images d-flex flex-wrap gap-15">
@@ -51,13 +51,6 @@ const SpecificProduct = () => {
                                     $100
                                 </p>
                                 <div className="d-flex align-items-center gap-10">
-                                    {/* <ReactStars
-                                        count={5}
-                                        size={24}
-                                        activeColor="#ffd700"
-                                        value={4}
-                                        edit={false}
-                                    /> */}
                                 </div>
                             </div>
                             <div className="py-3">
@@ -155,10 +148,9 @@ const SpecificProduct = () => {
                         </h3>
                     </div>
                     <div className="row">
-                        {/* <ProductCard />
-                        <ProductCard /> */}
-                        {/* <ProductCard />
-                            <ProductCard /> */}
+
+                        {/* {/* <ProductCard /> */}
+
                     </div>
                 </div>
             </Container>

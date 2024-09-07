@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, } from 'react'
 import StoreHeader from '../components/StoreHeader'
 import Meta from '../components/Meta'
 import ProductCard from '../components/ProductCard';
@@ -174,7 +174,7 @@ const Store = () => {
             <div className="products-list pb-5">
               <div className="d-flex gap-10 flex-wrap">
                 {products.map((item) => (
-                  <ProductCard key={item._id} grid={grid} item={item} />
+                  <ProductCard key={item._id} grid={grid} item={item} />    
                 ))}
                 {/* <ProductCard grid={grid} />
                 <ProductCard grid={grid} />

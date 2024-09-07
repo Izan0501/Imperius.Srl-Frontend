@@ -1,6 +1,7 @@
 import { useState, createContext, useEffect } from "react";
 import { getUser } from "../api/getUser";
 import Loading from '../components/Loading';
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -37,8 +38,9 @@ export const AuthProvider = ({ children }) => {
         logout,
     };
 
-    if(loading) return <Loading/>
+    if (loading) return <Loading />
 
     return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>
 
 } 
+
