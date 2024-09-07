@@ -155,8 +155,8 @@ const SpecificProduct = () => {
                         </h3>
                     </div>
                     <div className="row">
-                        <ProductCard />
-                        <ProductCard />
+                        {/* <ProductCard />
+                        <ProductCard /> */}
                         {/* <ProductCard />
                             <ProductCard /> */}
                     </div>

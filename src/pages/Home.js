@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import BlogCard from '../components/BlogCard';
@@ -13,9 +13,9 @@ const Home = () => {
             <Container class1='home-wrapper-1 py-5'>
                 <div className="row">
                     <div className="col-6">
-                        <div 
-                        style={{"width":"614px", "height":"440px", "backgroundColor":"white", "borderRadius":"10px"}}
-                        className="main-banner position-relative p-3 object-fit-fill">
+                        <div
+                            style={{ "width": "614px", "height": "440px", "backgroundColor": "white", "borderRadius": "10px" }}
+                            className="main-banner position-relative p-3 object-fit-fill">
                             <img src="images/arcor2.png" className='img-fluid rounded-3 w-100 h-100 object-fit-cover' alt="main banner" />
                             <div className="main-banner-content position-absolute">
                                 <h4>Nuevas Cofler Rellenas</h4>
@@ -157,10 +157,6 @@ const Home = () => {
                         </h3>
                     </div>
                     <div className="row">
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
                     </div>
                 </div>
             </Container>

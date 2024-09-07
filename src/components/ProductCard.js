@@ -10,6 +10,9 @@ import addcart from "../images/add-cart.svg"
 import view from "../images/view.svg"
 
 const ProductCard = (props) => {
+
+    const {title, description, price, image} = props.item;
+
     const { grid } = props
     const location = useLocation();
 
@@ -23,20 +26,18 @@ const ProductCard = (props) => {
                         </Link>
                     </div>
                     <div className="product-image">
-                        <img src={watch} className='img-fluid' alt="product" />
-                        <img src={watch2} className='img-fluid' alt="product" />
+                        <img src={image} className='img-fluid' alt={image} />
+                        <img src='' className='img-fluid' alt="product" />
                     </div>
                     <div className="product-details">
-                        <h6 className="brand">Havels</h6>
+                        <h6 className="brand">NEW</h6>
                         <h5 className="product tittle">
-                            kids headphones bulk 10 pak lulti colored for students
+                            {title}
                         </h5>
                         <p className={`description ${grid === 12 ? "d-block" : "d-none"}`}>
-                            At veri eos er accusamius eu ijusti odio dihfionsj dicusi qui
-                            blandintiis oraesentium volptatum vlpado delentini atque qurripri
-                            quos dolores ear tcasasd oraesentium volptatum vlpado delentini atq...
+                            {description}
                         </p>
-                        <Link className="price">$100.00</Link>
+                        <Link className="price">${price}</Link>
                     </div>
                     <div className="action-bar position-absolute">
                         <div className="d-flex flex-column gap-15">
