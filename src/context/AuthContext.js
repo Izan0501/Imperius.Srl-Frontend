@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
         (async () => {
             const token = localStorage.getItem('access');
             await login(token);
-            setLoading(false)
+            setLoading(false);
         })();
     }, []);
 
