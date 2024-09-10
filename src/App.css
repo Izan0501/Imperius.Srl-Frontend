@@ -786,7 +786,6 @@ footer .social-icons .text-white {
 /* Shipping page (in Checkout page) Ends*/
 
 /* loading page */
-
 .loader {
   position: fixed;
   top: 0;
@@ -823,4 +822,5 @@ footer .social-icons .text-white {
     transform: rotate(1turn);
   }
 }
+/* loading page end */
 
