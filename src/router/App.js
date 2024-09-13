@@ -18,7 +18,6 @@ import Cart from '../pages/Cart';
 import Checkout from '../pages/Checkout';
 import { AuthContext } from '../context/AuthContext';
 
-
 function App() {
 
   const { user } = useContext(AuthContext);
@@ -40,7 +39,7 @@ function App() {
           <Route path='reset-password' element={<ResetPassword />} />
           <Route path='specific-blog' element={<SpecificBlog />} />
           <Route path='product/:id' element=
-            {<SpecificProduct />} />
+            {<SpecificProduct />}/>
           {user ? (
             <>
               <Route path='cart' element={<Cart />} />

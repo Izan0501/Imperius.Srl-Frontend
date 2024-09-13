@@ -176,10 +176,6 @@ const Store = () => {
                 {products.map((item) => (
                   <ProductCard key={item._id} grid={grid} item={item} />    
                 ))}
-                {/* <ProductCard grid={grid} />
-                <ProductCard grid={grid} />
-                <ProductCard grid={grid} />
-                <ProductCard grid={grid} /> */}
               </div>
             </div>
           </div>
