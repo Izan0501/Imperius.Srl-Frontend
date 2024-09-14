@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Meta from '../components/Meta'
 import ProductHeader from '../components/StoreHeader'
-// import ProductCard from '../components/ProductCard';
 import ReactImageZoom from 'react-image-zoom';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { TbGitCompare } from 'react-icons/tb';
@@ -13,7 +12,6 @@ import { getProduct } from '../api/getSpecificProduct';
 const SpecificProduct = () => {
     const [product, setProduct] = useState([]);
 
-    
     
     useEffect(() => {
         getProduct()
@@ -34,7 +32,7 @@ const SpecificProduct = () => {
     }
 
 
-    const { title, price, description, category, image } = product
+    const { title, price, description, category, image, quantity } = product
 
     const propsZ = { width: 400, heigth: 500, zoomWidth: 600, img: 'http://localhost:3977/' + image }; //"https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg"
 
@@ -51,12 +49,10 @@ const SpecificProduct = () => {
                                 <ReactImageZoom {...propsZ} />
                             </div>
                         </div>
-                        <div className="other-product-images d-flex flex-wrap gap-15">
+                        {/* <div className="other-product-images d-flex flex-wrap gap-15">
                             <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
                             <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
-                            <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
-                            <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-6">
                         <div className="main-product-details">

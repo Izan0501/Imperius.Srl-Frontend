@@ -44,7 +44,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="small-banner position-relative p-3">
-                                <img src="images/catbanner-02.jpg" className='img-fluid rounded-3' alt="main banner" />
+                                <img src="images/catbanner-02.jpg" className='img-fluid rounded-3 ob' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
                                     <h4>15% OFF</h4>
                                     <h5>Smartwatch 7</h5>

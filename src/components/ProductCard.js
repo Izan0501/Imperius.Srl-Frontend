@@ -7,7 +7,7 @@ import view from "../images/view.svg"
 
 const ProductCard = (props) => {
 
-    const {title, description, price, image, _id} = props.item;
+    const { title, description, price, image, _id, quantity } = props.item;
 
     const { grid } = props
     const location = useLocation();
@@ -22,8 +22,7 @@ const ProductCard = (props) => {
                         </Link>
                     </div>
                     <div className="product-image">
-                        <img src={'http://localhost:3977/'+image} className='img-fluid' alt={image} />
-                        <img src='' className='img-fluid' alt="product" />
+                        <img src={'http://localhost:3977/' + image} className='img-fluid' alt={image} />
                     </div>
                     <div className="product-details">
                         <h6 className="brand">NEW</h6>
