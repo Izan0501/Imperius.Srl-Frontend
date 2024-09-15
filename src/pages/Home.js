@@ -36,35 +36,31 @@ const Home = () => {
                     <div className="col-6">
                         <div className="d-flex flex-wrap gap-10  justify-content-between align-items-center">
                             <div className="small-banner position-relative p-3">
-                                <img src="images/catbanner-01.jpg" className='img-fluid rounded-3' alt="main banner" />
+                                <img src="images/arcorCandy.png" className='img-fluid rounded-3' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
-                                    <h4>Best Sale</h4>
-                                    <h5>LAPTOPS MAX</h5>
-                                    <p>From $1699.00 <br /> or $64.62/mo</p>
+                                    <h4>NEW</h4>
+                                    <h5 className='h51'>CANDY</h5>
                                 </div>
                             </div>
                             <div className="small-banner position-relative p-3">
-                                <img src="images/catbanner-02.jpg" className='img-fluid rounded-3 ob' alt="main banner" />
+                                <img src="images/arcorOthers.png" className='img-fluid rounded-3' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
                                     <h4>15% OFF</h4>
-                                    <h5>Smartwatch 7</h5>
-                                    <p>Shop the latest band</p>
+                                    <h5>OTROS</h5>
                                 </div>
                             </div>
                             <div className="small-banner position-relative p-3">
-                                <img src="images/catbanner-03.jpg" className='img-fluid rounded-3' alt="main banner" />
+                                <img src="images/arcorChocolates.png" className='img-fluid rounded-3 ' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
-                                    <h4>NEW ARRIVAL</h4>
-                                    <h5>BUY iPad Air</h5>
-                                    <p>From $599 <br /> or $54.62/mo</p>
+                                    <h4>NEW</h4>
+                                    <h5>COFLER</h5>
                                 </div>
                             </div>
                             <div className="small-banner position-relative p-3">
-                                <img src="images/catbanner-04.jpg" className='img-fluid rounded-3' alt="main banner" />
+                                <img src="images/arcorMer.png" className='img-fluid rounded-3' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
                                     <h4>FOR YOU</h4>
-                                    <h5>HEADPHONES</h5>
-                                    <p>From $499 <br /> or $34.62/mo</p>
+                                    <h5>MERCADERIA</h5>
                                 </div>
                             </div>
                         </div>
@@ -182,13 +178,13 @@ const Home = () => {
             </Container> */}
             {/* Popular products Section */}
             <Container class1='famous-wrapper py-5 home-wrapper-2'>
-                <motion.div 
-                variants={fadeIn("right", 0.2)}
-                initial="hidden"
-                whileInView={"show"}
-                viewport={{ once: false, amount: 0.7 }}
-                
-                className="row">
+                <motion.div
+                    variants={fadeIn("right", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}
+
+                    className="row">
                     <h3 className="section-heading">
                         NEW STOCK
                     </h3>
