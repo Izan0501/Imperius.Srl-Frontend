@@ -34,6 +34,10 @@ a {
   gap: 5px;
 }
 
+.gap-6 {
+  gap: 6px;
+}
+
 .gap-10 {
   gap: 10px;
 }
@@ -188,7 +192,7 @@ footer .social-icons .text-white {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  color:#9ba94c;
+  color: #9ba94c;
   margin: 0 0 12px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -359,8 +363,8 @@ footer .social-icons .text-white {
   transition: 0.5s;
 }
 
-.product-image:hover img{
-  transform: scale(1.1);
+.product-image:hover img {
+  transform: scale(1.04);
 }
 
 .product-card:hover .action-bar {
@@ -383,15 +387,11 @@ footer .social-icons .text-white {
 }
 
 .action-bar {
-  top: 10%;
+  top: 5%;
   right: -23px;
   transition: 0.3s;
 }
 
-.wishlist-icon {
-  top: 2%;
-  right: 15px;
-}
 /* productCard section ends */
 
 /* Famous-popular products section */
@@ -552,6 +552,7 @@ footer .social-icons .text-white {
 /* Store Section Ends */
 
 /* Contact Page */
+
 .contact-inner-wrapper {
   padding: 30px 20px;
   border-radius: 15px;

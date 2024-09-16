@@ -1,12 +1,63 @@
 import React from 'react';
 import Meta from '../components/Meta';
 import ContactHeader from '../components/StoreHeader';
+import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 import { AiOutlineHome, AiOutlineMail } from 'react-icons/ai';
-import { BiPhoneCall, BiInfoCircle } from 'react-icons/bi';
+import { BiPhoneCall, BiInfoCircle, BiBorderRadius } from 'react-icons/bi';
 import Container from '../components/Container';
 import { Link } from 'react-router-dom';
 
 const Contact = () => {
+  const [map, setMap] = React.useState(null);
+
+  const containerStyle = {
+    width: "100%",
+    height: '500px',
+    border: '0',
+    BorderRadius: '20px'
+  };
+
+  const center = {
+    lat: -26.696950,
+    lng: -66.049365
+  };
+
+  const points = [
+    {
+      lat: -26.696950,
+      lng: -66.049365
+    },
+    // {
+    //   lat: -26.698955,
+    //   lng: -66.049365
+    // },
+    // {
+    //   lat: -26.693955,
+    //   lng: -66.049365
+    // },
+    // {
+    //   lat: -26.6945955,
+    //   lng: -66.049365
+    // }
+  ];
+
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyAnSbvZP1IdOW9fTljd7vdVOCeFKiRzB30"
+  });
+
+  const onLoad = React.useCallback(function callback(map) {
+    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+    const bounds = new window.google.maps.LatLngBounds(center);
+    map.fitBounds(bounds);
+
+    setMap(map)
+  }, []);
+
+  const onUnmount = React.useCallback(function callback(map) {
+    setMap(null)
+  }, []);
+
   return (
     <>
       <Meta title={'Contact Us'} />
@@ -14,15 +65,24 @@ const Contact = () => {
       <Container class1="contact-wrapper home-wrapper-2 py-5">
         <div className="row">
           <div className="col-12">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d529.8638634982015!2d-66.04948075816172!3d-26.696949038087734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9421e52d634a02cf%3A0xe1d0e1a47fbdaf76!2sSanta%20Mar%C3%ADa%2C%20Catamarca!5e0!3m2!1ses!2sar!4v1723324969871!5m2!1ses!2sar"
-              className='border-0 w-100'
-              height="450"
-              style={{ "border": "0" }}
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            />
+            {isLoaded ? <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={center}
+              zoom={10}
+              onLoad={onLoad}
+              onUnmount={onUnmount}
+              options={{
+                streetViewControl: false,
+                mapTypeControl: false
+              }}
+            >
+              {
+                points.map((point, i) => (
+                  <MarkerF position={point}>
+                  </MarkerF>
+                ))
+              }
+            </GoogleMap> : <></>}
           </div>
           <div className="col-12 mt-5">
             <div className="contact-inner-wrapper d-flex justify-content-between">

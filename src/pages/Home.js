@@ -59,7 +59,7 @@ const Home = () => {
                             <div className="small-banner position-relative p-3">
                                 <img src="images/arcorMer.png" className='img-fluid rounded-3' alt="main banner" />
                                 <div className="small-banner-content position-absolute">
-                                    <h4>FOR YOU</h4>
+                                    <h4>20% OFF</h4>
                                     <h5>MERCADERIA</h5>
                                 </div>
                             </div>
