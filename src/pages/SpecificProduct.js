@@ -11,15 +11,12 @@ import { getProduct } from '../api/getSpecificProduct';
 
 const SpecificProduct = () => {
     const [product, setProduct] = useState([]);
-
     
     useEffect(() => {
         getProduct()
             .then((data) => setProduct(data))
             .catch((error) => console.log(`Error: ${error}`));
     }, []);
-
-    console.log(product);
 
     const copyToClipboard = (text) => {
         console.log('text', text)
@@ -49,10 +46,6 @@ const SpecificProduct = () => {
                                 <ReactImageZoom {...propsZ} />
                             </div>
                         </div>
-                        {/* <div className="other-product-images d-flex flex-wrap gap-15">
-                            <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
-                            <div><img src={'http://localhost:3977/' + image} className="img-fluid" alt="" /></div>
-                        </div> */}
                     </div>
                     <div className="col-6">
                         <div className="main-product-details">

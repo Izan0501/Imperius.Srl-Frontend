@@ -7,6 +7,7 @@ import Container from '../components/Container';
 import { services } from '../utils/Data';
 import { motion } from 'framer-motion'
 import { fadeIn } from '../components/variants'
+import { getProducts } from '../api/getProducts';
 
 const Home = () => {
     return (

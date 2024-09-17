@@ -1,30 +1,20 @@
 import React, { useContext } from 'react';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useSearchParams } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import { AuthContext } from '../context/AuthContext';
 
 const Header = () => {
+  const { user, logout, products } = useContext(AuthContext);
 
-  const { user, logout } = useContext(AuthContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleChange = (e) => {
+    setSearchParams({ title: e.target.value })
+  }
 
   return (
     <>
       {/* Top Header */}
-      {/* <header className="header-top-strip py-3">
-        <div className="container-xxl">
-          <div className="row">
-            <div className="col-6">
-              <p className='text-white mb-0'>Free Shipping Over $100 & Free Returns</p>
-            </div>
-            <div className="col-6">
-              <p className='text-end text-white mb-0'>Hotline:
-                <Link to='/tel: +54381683547' className='text-white'>+54 381683547</Link>
-              </p>
-            </div>
-          </div>
-        </div>
-      </header> */}
-      {/* Middle Header */}
       <header className="header-upper py-3">
         <div className="container-xxl">
           <div className="row align-items-center">
@@ -38,11 +28,39 @@ const Header = () => {
             <div className="col-5">
               <div className="input-group">
                 <input
-                  type="text" className="form-control" placeholder="Search Product Here..." aria-label="Search Product Here..." aria-describedby="basic-addon2" />
+                  type="text"
+                  className="form-control"
+                  placeholder="Search Product Here..."
+                  aria-describedby="basic-addon2"
+                  onChange={handleChange} aria-label="Search Product Here..."
+                  value={searchParams.get('title') ? searchParams.get('title') : ''}
+                />
                 <span className="input-group-text p-3" id="basic-addon2">
                   <BsSearch className='fs-4' />
                 </span>
               </div>
+              <ul className='mt-3'>
+                {
+                  products
+                    .filter((item) => {
+                      let inputValue = searchParams.get('title');
+                      let title = item.title.toLowerCase()
+
+                      if (!inputValue) {
+                        return false;
+                      } else {
+                        return title.startsWith(inputValue.toLowerCase());
+                      }
+                    })
+                    .map((item) => (
+                      <li
+                        className={item ? "d-block" : "d-none"}
+                        key={item._id}
+                      >
+                        <Link to={`/product/${item._id}`}>{item.title}</Link>
+                      </li>
+                    ))}
+              </ul>
             </div>
             <div className="col-5">
               <div className="header-upper-links d-flex align-items-center justify-content-around">
