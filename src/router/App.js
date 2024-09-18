@@ -43,6 +43,16 @@ function App() {
     })
   };
 
+  const deleteProduct = (_id) => {
+    const foundId = cartProducts.find((item) => item._id === _id);
+
+    const newCart = cartProducts.filter((item) => {
+      return item !== foundId;
+    });
+
+    setCartProducts(newCart);
+  };
+
   return (
     <>
       <Routes>
@@ -59,10 +69,18 @@ function App() {
           <Route path='signup' element={<Signup />} />
           <Route path='reset-password' element={<ResetPassword />} />
           <Route path='specific-blog' element={<SpecificBlog />} />
-          <Route path='product/:id' element={<SpecificProduct addProductToCart={addProductToCart}/>} />
+          <Route path='product/:id' element={<SpecificProduct addProductToCart={addProductToCart} />} />
           {user ? (
             <>
-              <Route path='cart' element={<Cart cartProducts={cartProducts}/>} />
+              <Route
+                path='cart'
+                element={
+                  <Cart
+                    cartProducts={cartProducts}
+                    deleteProduct={deleteProduct}
+                  />
+                }
+              />
               <Route path='checkout' element={<Checkout />} />
             </>
           ) : null

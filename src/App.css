@@ -811,6 +811,11 @@ footer .social-icons .text-white {
 .cart-col-4 {
   width: 15%;
 }
+
+.delete-icon {
+  cursor: pointer !important;
+}
+
 /* Cart Page Ends */
 
 /* Shipping page (in Checkout page) */

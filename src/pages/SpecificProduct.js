@@ -31,7 +31,7 @@ const SpecificProduct = ({ addProductToCart }) => {
 
     const { title, price, description, category, image, quantity } = product
 
-    const propsZ = { width: 400, heigth: 500, zoomWidth: 600, img: 'http://localhost:3977/' + image }; //"https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?cs=srgb&dl=pexels-ferarcosn-190819.jpg&fm=jpg"
+    const propsZ = { width: 400, heigth: 500, zoomWidth: 600, img: 'http://localhost:3977/' + image };
 
 
     return (

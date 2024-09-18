@@ -6,7 +6,7 @@ import { AiFillDelete } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Container from '../components/Container';
 
-const Cart = ({ cartProducts }) => {
+const Cart = ({ cartProducts, deleteProduct }) => {
     if (cartProducts.length === 0) {
         return (
             <>
@@ -59,7 +59,8 @@ const Cart = ({ cartProducts }) => {
                                                     </div>
                                                     <div>
                                                         <AiFillDelete
-                                                            className='text-danger'
+                                                            className='delete-icon text-danger'
+                                                            onClick={() => deleteProduct(products._id)}
                                                         />
                                                     </div>
                                                 </div>
