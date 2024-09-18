@@ -10,8 +10,8 @@ const Cart = ({ cartProducts, deleteProduct }) => {
     if (cartProducts.length === 0) {
         return (
             <>
-                <div className="d-flex align-items-center justify-content-center">
-                    <h3 className="contact-title mb-4 gap-15">Cart is Empty</h3>
+                <div className="empty-content d-flex align-items-center justify-content-center">
+                    <h3 className="contact-title mb-4 gap-15">Your Cart Is Empty</h3>
                 </div>
             </>
         )

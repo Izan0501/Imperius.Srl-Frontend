@@ -786,6 +786,12 @@ footer .social-icons .text-white {
 /* Sigle ProductPage Ends*/
 
 /* Cart Page */
+
+.empty-content {
+  width: 100%;
+  height: 100vh;
+}
+
 .cart-header,
 .cart-data {
   border-bottom: 1px solid #eaeaea;
