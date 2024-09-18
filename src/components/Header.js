@@ -3,7 +3,7 @@ import { NavLink, Link, useSearchParams } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import { AuthContext } from '../context/AuthContext';
 
-const Header = () => {
+const Header = ({ cartProducts }) => {
   const { user, logout, products } = useContext(AuthContext);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -39,7 +39,7 @@ const Header = () => {
                   <BsSearch className='fs-4' />
                 </span>
               </div>
-              <ul className='mt-3'>
+              <ul className={searchParams.get('title') ? 'filterContent mt-0 d-flex' : 'd-none'}>
                 {
                   products
                     .filter((item) => {
@@ -51,15 +51,20 @@ const Header = () => {
                       } else {
                         return title.startsWith(inputValue.toLowerCase());
                       }
+
                     })
                     .map((item) => (
                       <li
-                        className={item ? "d-block" : "d-none"}
+                        className='filter-li'
                         key={item._id}
                       >
-                        <Link to={`/product/${item._id}`}>{item.title}</Link>
+                        <br className='dash' />
+                        <Link className='a' to={`/product/${item._id}`}>{item.title}</Link>
                       </li>
+
                     ))}
+
+
               </ul>
             </div>
             <div className="col-5">
@@ -105,7 +110,7 @@ const Header = () => {
                   <Link to='/cart' className='d-flex align-items-center gap-10 text-white'>
                     <img src="images/cart.svg" alt="cart" />
                     <div className="d-flex flex-column gap-10">
-                      <span className="badge bg-white text-dark">0</span>
+                      <span className="badge bg-white text-dark">{cartProducts.length}</span>
                       <p className='mb-0'>$0.00</p>
                     </div>
                   </Link>
@@ -113,10 +118,10 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </div >
+      </header >
       {/* End Header */}
-      <header className="header-bottom py-3">
+      < header className="header-bottom py-3" >
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
@@ -156,7 +161,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </header >
     </>
   )
 }

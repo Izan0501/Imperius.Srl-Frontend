@@ -63,7 +63,8 @@ const Contact = () => {
       <ContactHeader title='Contact Us' />
       <Container class1="contact-wrapper home-wrapper-2 py-5">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 bg-white rounded-2 p-4">
+            <h3 className="contact-title mb-4 gap-15">Our branches</h3>
             {isLoaded ? <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}
@@ -131,7 +132,7 @@ const Contact = () => {
                     <li className='mb-3 d-flex gap-15 align-items-center'>
                       <AiOutlineHome className='fs-5' />
                       <address className='mb-0'>
-                        Fray Mamerto Esquiu 100, K4139 Santa María, Catamarca
+                        Fray Mamerto Esquiu y Mariano Moreno, K4139 Santa María, Catamarca
                       </address>
                     </li>
                     <li className='mb-3 d-flex gap-15 align-items-center'>

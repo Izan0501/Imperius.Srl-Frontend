@@ -9,9 +9,9 @@ import { Link } from 'react-router-dom';
 import { getProduct } from '../api/getSpecificProduct';
 
 
-const SpecificProduct = () => {
+const SpecificProduct = ({ addProductToCart }) => {
     const [product, setProduct] = useState([]);
-    
+
     useEffect(() => {
         getProduct()
             .then((data) => setProduct(data))
@@ -94,9 +94,14 @@ const SpecificProduct = () => {
                                         />
                                     </div>
                                     <div className='d-flex align-items-center gap-30 ms-5'>
-                                        <button className="button border-0" type='submit'>
+                                        <Link
+                                            to='/cart'
+                                            className="button border-0"
+                                            type='submit'
+                                            onClick={() => addProductToCart(product)}
+                                        >
                                             <Link to='/cart'>Add To Cart</Link>
-                                        </button>
+                                        </Link>
                                         <button className='button signup'>
                                             <Link to='/checkout'>Buy it now</Link>
                                         </button>

@@ -126,7 +126,6 @@ const Store = () => {
                   </div>
                   <div className="w-50">
                     <h5>Headphones Ultimate I6+</h5>
-
                     <b>$ 300</b>
                   </div>
                 </div>
