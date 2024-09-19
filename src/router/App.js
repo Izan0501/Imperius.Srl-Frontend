@@ -75,8 +75,8 @@ function App() {
   const decreaseFunction = (product) => {
     const productRepeat = cartProducts.find((item) => item._id === product._id);
 
-    if (productRepeat.length === 0) {
-      return deleteProduct(productRepeat);
+    if (productRepeat.amount <= 1) {
+      return deleteProduct(productRepeat._id);
     } else {
       setCartProducts(
         cartProducts.map((item) =>
