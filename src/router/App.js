@@ -26,21 +26,66 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   const addProductToCart = (product) => {
-    const index = cartProducts.findIndex((item) => item._id === product._id);
-    if (index === -1) {
-      setCartProducts((old) => [...old, product]);
-    } else {
-      const increaseQuantity = cartProducts.map((item) =>
-        item._id === product._id ? { ...item, amount: item.amount + 1 } : item
-      );
-      setCartProducts(increaseQuantity);
-    }
+    if (user) {
+      const index = cartProducts.findIndex((item) => item._id === product._id);
+      if (index === -1) {
+        setCartProducts((old) => [...old, product]);
+      } else {
+        const increaseQuantity = cartProducts.map((item) =>
+          item._id === product._id ? { ...item, amount: item.amount + 1 } : item
+        );
+        setCartProducts(increaseQuantity);
+      }
 
-    Swal.fire({
-      title: 'Your product was added correctly!',
-      icon: 'success',
-      confirmButtonText: 'Cool'
-    })
+      if (cartProducts) {
+        return (
+          Swal.fire({
+            title: 'Your product was added correctly!',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+        )
+      }
+
+    } else {
+      return (
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "You need to login!",
+        })
+      )
+    }
+  };
+
+  const addFunction = (product) => {
+    const productRepeat = cartProducts.find((item) => item._id === product._id);
+
+    if (productRepeat) {
+      setCartProducts(
+        cartProducts.map((item) =>
+          item._id === product._id
+            ? { ...product, amount: productRepeat.amount + 1 }
+            : item
+        )
+      );
+    }
+  };
+
+  const decreaseFunction = (product) => {
+    const productRepeat = cartProducts.find((item) => item._id === product._id);
+
+    if (productRepeat.length === 0) {
+      return deleteProduct(productRepeat);
+    } else {
+      setCartProducts(
+        cartProducts.map((item) =>
+          item._id === product._id
+            ? { ...product, amount: productRepeat.amount - 1 }
+            : item
+        )
+      );
+    };
   };
 
   const deleteProduct = (_id) => {
@@ -51,6 +96,24 @@ function App() {
     });
 
     setCartProducts(newCart);
+
+    if (newCart) {
+      return (
+        Swal.fire({
+          title: 'Your product was deleted correctly!',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+      )
+    } else {
+      return (
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        })
+      )
+    }
   };
 
   return (
@@ -76,6 +139,8 @@ function App() {
                 path='cart'
                 element={
                   <Cart
+                    decreaseFunction={decreaseFunction}
+                    addFunction={addFunction}
                     cartProducts={cartProducts}
                     deleteProduct={deleteProduct}
                   />
