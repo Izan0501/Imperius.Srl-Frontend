@@ -25,7 +25,7 @@ function App() {
     ?JSON.parse(localStorage.getItem('products'))
     : [];
 
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   const [cartProducts, setCartProducts] = useState(initialProducts);
 
