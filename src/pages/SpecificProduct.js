@@ -102,9 +102,6 @@ const SpecificProduct = ({ addProductToCart }) => {
                                         >
                                             <Link to='/cart'>Add To Cart</Link>
                                         </Link>
-                                        <button className='button signup'>
-                                            <Link to='/checkout'>Buy it now</Link>
-                                        </button>
                                     </div>
                                 </div>
                                 <div className="d-flex align-items-center gap-15">

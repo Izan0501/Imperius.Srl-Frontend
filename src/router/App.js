@@ -21,11 +21,12 @@ import Swal from 'sweetalert2'
 
 function App() {
 
-  const initialProducts = localStorage.getItem('products')
-    ?JSON.parse(localStorage.getItem('products'))
-    : [];
+  const { user } = useContext(AuthContext);
 
-  const { user, logout } = useContext(AuthContext);
+  const initialProducts = localStorage.getItem
+    ('products')
+    ? JSON.parse(localStorage.getItem('products'))
+    : [];
 
   const [cartProducts, setCartProducts] = useState(initialProducts);
 
@@ -154,7 +155,10 @@ function App() {
                   />
                 }
               />
-              <Route path='checkout' element={<Checkout />} />
+              <Route
+                element={<Checkout />}
+                path='checkout'
+              />
             </>
           ) : null
           }
