@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import '../App.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from '../components/Layout';
@@ -21,9 +21,17 @@ import Swal from 'sweetalert2'
 
 function App() {
 
+  const initialProducts = localStorage.getItem('products')
+    ?JSON.parse(localStorage.getItem('products'))
+    : [];
+
   const { user } = useContext(AuthContext);
 
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(initialProducts);
+
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(cartProducts));
+  }, [cartProducts]);
 
   const addProductToCart = (product) => {
     if (user) {
