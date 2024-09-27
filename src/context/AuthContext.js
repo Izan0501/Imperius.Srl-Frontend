@@ -3,12 +3,14 @@ import { getUser } from "../api/getUser";
 import Loading from '../components/Loading';
 import { getProducts } from "../api/getProducts";
 
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
+    const [order, setOrder] = useState([]);
 
     useEffect(() => {
         getProducts()
@@ -24,6 +26,16 @@ export const AuthProvider = ({ children }) => {
         })();
     }, []);
 
+
+    // useEffect(() => {
+    //     (async () => {
+    //         const product = localStorage.getItem('products');
+            
+    //     })();
+    // }, []);
+
+
+
     const login = async (token) => {
         try {
             const user = await getUser(token)
@@ -36,7 +48,8 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setUser(false);
-        localStorage.clear();
+        localStorage.removeItem('products');
+        localStorage.removeItem('access');
     };
 
     const data = {
