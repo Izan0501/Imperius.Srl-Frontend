@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import BlogCard from '../components/BlogCard';
-// import ProductCard from '../components/ProductCard';
 import Container from '../components/Container';
 import { services } from '../utils/Data';
 import { motion } from 'framer-motion'
 import { fadeIn } from '../components/variants'
-import { getProducts } from '../api/getProducts';
+import { AuthContext } from '../context/AuthContext';
 
 const Home = () => {
+
+    const { blogs } = useContext(AuthContext);
+
     return (
         <>
             {/* home wrapper*/}
@@ -301,18 +303,15 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-3">
-                        <BlogCard />
-                    </div>
-                    <div className="col-3">
-                        <BlogCard />
-                    </div>
-                    <div className="col-3">
-                        <BlogCard />
-                    </div>
-                    <div className="col-3">
-                        <BlogCard />
-                    </div>
+                    {blogs.map((item) => {
+                        return<div className="col-3">
+                            <BlogCard 
+                                key={item._id}
+                                item={item}
+                            />
+                        </div>
+                    })}
+
                 </div>
             </Container>
         </>

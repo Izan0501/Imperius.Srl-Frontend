@@ -114,6 +114,7 @@ const SpecificProduct = ({ addProductToCart, addProductToList }) => {
                                     >
                                         <Link
                                             to="/wishlist"
+                                            className='wishLink2'
                                         >
                                             <AiOutlineHeart
                                                 className='fs-5 me-2'

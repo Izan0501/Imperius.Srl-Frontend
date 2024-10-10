@@ -781,6 +781,23 @@ footer .social-icons .text-white {
   margin-top: 0px;
   margin-left: 0px;
 }
+.heart:hover {
+  color: red;
+  transform: scale(1.1);
+}
+
+.wishLink2{
+  font-weight: bold;
+  color: var(--color-febd69) !important;
+}
+.wishLink2:hover{
+  color: red !important;
+  transform: scale(1.1);
+}
+
+.wishLink{
+  font-weight: bold;
+}
 /* Sigle ProductPage Ends*/
 
 /* Cart Page */

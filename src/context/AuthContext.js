@@ -2,6 +2,7 @@ import { useState, createContext, useEffect } from "react";
 import { getUser } from "../api/getUser";
 import Loading from '../components/Loading';
 import { getProducts } from "../api/getProducts";
+import { getBlogs } from "../api/getBlogs";
 
 
 export const AuthContext = createContext();
@@ -10,14 +11,21 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const [order, setOrder] = useState([]);
+    const [blogs, setBlogs] = useState([]);
+    // const [order, setOrder] = useState([]);
 
     useEffect(() => {
         getProducts()
-            .then((data) => setProducts(data))
-            .catch((error) => console.log(`Error: ${error}`));
+        .then((data) => setProducts(data))
+        .catch((error) => console.log(`Error: ${error}`));
     }, []);
 
+    useEffect(() => {
+        getBlogs()
+            .then((data) => setBlogs(data))
+            .catch((error) => console.log(`Error: ${error}`));
+    }, []);
+    
     useEffect(() => {
         (async () => {
             const token = localStorage.getItem('access');
@@ -25,16 +33,6 @@ export const AuthProvider = ({ children }) => {
             setLoading(false);
         })();
     }, []);
-
-
-    // useEffect(() => {
-    //     (async () => {
-    //         const product = localStorage.getItem('products');
-            
-    //     })();
-    // }, []);
-
-
 
     const login = async (token) => {
         try {
@@ -58,6 +56,7 @@ export const AuthProvider = ({ children }) => {
         login,
         logout,
         products,
+        blogs
     };
 
     if (loading) return <Loading />

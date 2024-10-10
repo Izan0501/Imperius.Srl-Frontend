@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Meta from '../components/Meta'
 import BlogHeader from '../components/StoreHeader'
 import BlogCard from '../components/BlogCard'
 import Container from '../components/Container'
+import { AuthContext } from '../context/AuthContext'
+// import { getBlogs } from '../api/getBlogs'
 
 const Blog = () => {
+  const { blogs } = useContext(AuthContext);
+
   return (
     <>
       <Meta title={'Blogs'} />
@@ -28,18 +32,14 @@ const Blog = () => {
           </div>
           <div className="col-9">
             <div className="row">
-              <div className="col-6 mb-3">
-                <BlogCard />
-              </div>
-              <div className="col-6 mb-3">
-                <BlogCard />
-              </div>
-              <div className="col-6 mb-3">
-                <BlogCard />
-              </div>
-              <div className="col-6 mb-3">
-                <BlogCard />
-              </div>
+              {blogs.map((item) => {
+                return <div className="col-6 mb-3">
+                  <BlogCard
+                    key={item._id}
+                    item={item}
+                  />
+                </div>
+              })}
             </div>
           </div>
         </div>
