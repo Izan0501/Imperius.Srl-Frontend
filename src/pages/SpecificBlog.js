@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useDeferredValue, useEffect, useState } from 'react'
 import Meta from '../components/Meta'
 import BlogHeader from '../components/StoreHeader'
 import { Link } from 'react-router-dom'
 import { HiOutlineArrowLeft } from 'react-icons/hi'
-import blog from "../images/blog-1.jpg"
+import blogi from "../images/blog-1.jpg"
 import Container from '../components/Container'
+import { getSpecificBlog } from '../api/getSpecificBlog'
 
 const SpecificBlog = () => {
+  const [blog, setBlog] = useState([]);
+
+  useEffect(() => {
+    getSpecificBlog()
+      .then((data) => setBlog(data))
+      .catch((error) => console.log(`Error: ${error}`))
+  }, []);
+
+  const {title, description, image} = blog  
+
   return (
     <>
       <Meta title={'Dynamic Blog'} />
@@ -21,13 +32,11 @@ const SpecificBlog = () => {
                 <HiOutlineArrowLeft className='fs-4' /> Go back to Blogs
               </Link>
               <h3 className="title">
-                A Beautiful Sunday Morning Renaissance
+                {title}
               </h3>
-              <img src={blog} className='img-fluid w-100 my-4' alt="" />
+              <img src={'http://localhost:3977/' + image} className='blog-img img-fluid w-100 my-4' alt="" />
               <p>
-                kljgropi´kngiortuhg  lhjkfgoi iludfg oLIkjbf iequwyfgv oq i ñjklsdfhipuehfpeiuw hfle iwhfewiuhfqweoi fqwewqeofgqeofygqeoa,dñladkyf gqweoyfgqweoyfgqwoyfgqkh fvqoeyfvbqw elj oieu fg
-                kñjhdfiopua fhpiduoh fjpiads hfpoaiu fhpaiu fhpiof
-                aslkdha osiyud gas8io7 dhapso´dja p0á9sud0asu amsdoais oaisjd opioiajs poijpaouihs p piuhapui goyugoyui guoyg yug yuog
+                {description}
               </p>
             </div>
           </div>

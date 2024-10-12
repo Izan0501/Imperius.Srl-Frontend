@@ -1,18 +1,19 @@
-export const getProduct = async () => {
+export const getSpecificBlog = async () => {
     const location = window.location;
     const path = location.pathname;
     const lastpos = path.lastIndexOf("/");
     const id = path.substr(lastpos + 1);
 
     try {
-        const url = `http://localhost:3977/api/v1/product/${id}`;
+        const url = `http://localhost:3977/api/v1/blog/${id}`
 
         const res = await fetch(url);
         const data = await res.json();
 
-        if (res.status !== 200) throw res;
+        if(res.status !=200) throw res;
         return data;
     } catch (error) {
         throw error;
     }
+
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const BlogCard = ({ item }) => {
-  const { title, description, image } = item;
+  const { title, description, image, _id } = item;
 
   return (
     <>
@@ -16,7 +16,7 @@ const BlogCard = ({ item }) => {
           <p className='desc'>
             {description}
           </p>
-          <Link to="/specific-blog" className='button'>Read More</Link>
+          <Link to={`/blog/${_id}`} className='button'>Read More</Link>
         </div>
       </div>
     </>

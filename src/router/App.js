@@ -210,7 +210,7 @@ function App() {
           <Route path='forgot-password' element={<ForgotPassword />} />
           <Route path='signup' element={<Signup />} />
           <Route path='reset-password' element={<ResetPassword />} />
-          <Route path='specific-blog' element={<SpecificBlog />} />
+          <Route path='blog/:id' element={<SpecificBlog />} />
           <Route path='product/:id' element={<SpecificProduct
             addProductToCart={addProductToCart}
             addProductToList={addProductToList}
